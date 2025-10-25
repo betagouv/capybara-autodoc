@@ -1,0 +1,14 @@
+/ You can customize this template however you like.
+.fr-grid-row[style="min-height: 400px"]
+  .fr-col-12
+    h1 Documentation for #{Rails.application.name}
+
+    p This documentation is updated each time the code changes
+
+    ul
+    - @scenarios.sort_by(&:title).each do |scenario|
+      li
+        a[href='scenario_#{scenario.index}.html'] #{scenario.title}
+
+    p Dernière mise à jour le #{I18n.l(Time.zone.now)}
+
