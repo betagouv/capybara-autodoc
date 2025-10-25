@@ -1,0 +1,9 @@
+require 'fileutils'
+
+FileUtils.mkdir_p("spec/support/autodoc")
+template_dirname =  File.dirname(__dir__) + "/lib/templates/."
+
+FileUtils.cp_r(template_dirname, "spec/support/autodoc")
+
+support_dirname =  File.dirname(__dir__) + "/lib/support/."
+FileUtils.cp_r(support_dirname, "spec/support")

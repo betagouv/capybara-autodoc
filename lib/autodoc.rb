@@ -1,3 +1,6 @@
+require 'capybara/email/rspec'
+require "slim"
+
 class Autodoc
   @scenarios = []
 
@@ -27,7 +30,7 @@ class Autodoc
     )
 
     if @scenarios.any?
-      puts "La doc est accessible sur file://#{Rails.root.join('tmp/capybara/autodoc/index.html')}"
+      puts "The autodoc is available at file://#{Rails.root.join('tmp/capybara/autodoc/index.html')}"
     end
   end
 

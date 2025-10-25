@@ -1,11 +1,13 @@
+/ You can customize this template however you like.
 .row
   .col
     div[style="display: flex; position: sticky; top: 0; background: white;"]
       h1 = @title
-      ul[style="display: flex;"]
+      ul.mx-3.my-2.list-unstyled[style="display: flex;"]
         - @sections.each.with_index do |section, index|
           li
-            a[href="#section_#{index}"] = section.title
+            a[href="#section_#{index}"]
+             h2 = section.title
 
     - @sections.each.with_index do |section, index|
       / le padding-top et margin-top sont pour compenser la hauteur du headeur sticky
@@ -18,4 +20,3 @@
               p = step[:text]
           - else
             div = step[:text]
-

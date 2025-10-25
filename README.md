@@ -20,3 +20,31 @@ And then run
 $ bundle install
 $ bundle exec autodoc init
 ```
+
+Let's assume you have a spec in `spec/features/homepage_spec.rb` with the following content:
+
+```
+describe "Homepage", :js do
+  it "works" do
+    visit "/"
+    expect(page).to have_content "Hello world!"
+  end
+end
+```
+
+You can turn it into an Autodoc like this :
+
+```
+describe "Homepage", :js do
+  it "works" do
+    scenario = Autodoc.start_scenario("Homepage", self)
+    scenario.start_section("Home page")
+
+    visit "/"
+
+    scenario.add_screenshot(page, text: "The home page looks like this", wait_for: "Hello world!")
+  end
+end
+```
+
+
