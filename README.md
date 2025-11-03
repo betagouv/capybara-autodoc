@@ -47,4 +47,6 @@ describe "Homepage", :js do
 end
 ```
 
+You can then run your spec, and a static website will be generated automatically! You can then upload it wherever you like (for instance on Github pages).
 
+Do this each time your Continuous Integration build runs, and you've got up-to-date living documentation! 🎉
