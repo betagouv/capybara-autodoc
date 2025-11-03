@@ -1,7 +1,7 @@
 require 'capybara/email/rspec'
 require "slim"
 
-class Autodoc
+class Capybara::Autodoc
   @scenarios = []
 
   def self.start_scenario(title, example)

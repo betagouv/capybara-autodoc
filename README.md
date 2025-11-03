@@ -1,4 +1,4 @@
-# Autodoc
+# capybara-autodoc
 
 ## Turn your integration specs into always up-to-date documentation for your team
 
@@ -12,13 +12,13 @@ As an example, the Autodoc for RDV Service Public, the French team developing th
 
 Add this to your Gemfile :
 ```
-gem 'autodoc'
+gem 'capybara-autodoc'
 ```
 
 And then run
 ```
 $ bundle install
-$ bundle exec autodoc init
+$ bundle exec capybara-autodoc init
 ```
 
 Let's assume you have a spec in `spec/features/homepage_spec.rb` with the following content:
@@ -37,7 +37,7 @@ You can turn it into an Autodoc like this :
 ```
 describe "Homepage", :js do
   it "works" do
-    scenario = Autodoc.start_scenario("Homepage", self)
+    scenario = Capybara::Autodoc.start_scenario("Homepage", self)
     scenario.start_section("Home page")
 
     visit "/"

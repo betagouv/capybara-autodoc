@@ -1,3 +1,3 @@
 RSpec.configure do |config|
- config.after(:suite) { Autodoc.render }
+ config.after(:suite) { Capybara::Autodoc.render }
 end
